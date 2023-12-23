@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_item_list">
+
+    <fragment
+        android:id="@+id/fragment_login"
+        android:name="ro.ubbcluj.cs.matei.individuals.auth.login.LoginFragment"
+        android:label="@string/login"
+        tools:layout="@layout/fragment_login" />
+
+    <fragment
+        android:id="@+id/fragment_item_list"
+        android:name="ro.ubbcluj.cs.matei.individuals.todo.individuals.IndividualListFragment"
+        android:label="@string/item_list_fragment_label"
+        tools:layout="@layout/fragment_individual_list">
+
+        <action
+            android:id="@+id/action_ItemListFragment_to_ItemEditFragment"
+            app:destination="@id/fragment_individual_edit" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_individual_edit"
+        android:name="ro.ubbcluj.cs.matei.individuals.todo.individual.IndividualEditFragment"
+        android:label="@string/item_edit_fragment_label"
+        tools:layout="@layout/fragment_individual_edit">
+
+        <action
+            android:id="@+id/action_ItemEditFragment_to_ItemListFragment"
+            app:destination="@id/fragment_item_list" />
+    </fragment>
+</navigation>
